@@ -1,0 +1,144 @@
+/* responsivo */
+@media (max-width: 600px) {
+  li {
+    flex-direction: column;
+  }
+
+  .produtoDados {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title h2 {
+  font-size: 24px;
+  color: #444;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul#product-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.li:hover {
+  transform: scale(1.05) rotateY(10deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-overlay {
+  backdrop-filter: blur(5px);
+}
+
+.produtoDados {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.produtoDados h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.produtoDados span {
+  display: block;
+  margin-top: 5px;
+  color: #777;
+}
+
+.produtoImg {
+  flex: 0 0 160px;
+  margin-right: 10px;
+}
+
+.produtoImg img {
+  width: 250px;
+  max-width: 250px; /* Garante que a imagem não ultrapasse o tamanho do container */
+  height: auto; /* Mantém a proporção original da imagem */
+  border-radius: 8px;
+  object-fit: cover; /* Faz com que a imagem se ajuste ao contêiner sem distorcer */
+}
+
+.estrelaAvaliacao {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 35px;
+  direction: rtl; /* Inverter a direção para comportamento das estrelas */
+}
+
+.estrelaAvaliacao input[type="radio"] {
+  display: none;
+}
+
+.estrelaAvaliacao label {
+  color: #ddd;
+  font-size: 30px;
+  padding: 0 5px;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+/* seletor do label ★: class > radio > label */
+.estrelaAvaliacao input[type="radio"]:checked ~ label, /* todos os labels anteriores marcados */
+.estrelaAvaliacao label:hover,
+.estrelaAvaliacao label:hover ~ label /* todos os labels anteriores hover */ {
+  color: gold;
+}
+
+.comentario {
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 90%;
+  height: 100%;
+}
+
+.comentario textarea {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.comentario textarea:focus {
+  border-color: #333;
+  outline: none;
+}

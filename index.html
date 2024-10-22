@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avalie!</title>
-</head>
-<body>
-    
-</body>
-<script type="module" src="assets/js/index.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avalie os produtos</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/roboto.css" />
+    <link rel="stylesheet" href="assets/css/icons.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="roboto-regular">
+    <div class="container">
+      <div class="title">
+        <h2>
+          Olá {{user}}! Queremos sua opinião sobre os produtos que comprou 😊:
+        </h2>
+      </div>
+      <ul id="product-list"></ul>
+    </div>
+  </body>
+  <script type="module" src="assets/js/index.js"></script>
 </html>
