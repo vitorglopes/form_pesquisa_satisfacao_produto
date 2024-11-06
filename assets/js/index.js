@@ -1,72 +1,73 @@
-import factory from "./factory.js";
-import Cookie from "./Cookie.js";
+const produtos = [];
 
-addEventListener("DOMContentLoaded", (event) => {
-  const username = "formPesquisaSatisfacao";
-  const cookie = new Cookie(username);
-  const eita = cookie.getCookie();
-  console.log(eita);
-});
+function productFactory(id, nome, marca, preco, urlImg) {
+  return {
+    id: id,
+    nome: nome,
+    marca: marca,
+    preco: preco,
+    img: urlImg,
+  };
+}
 
-// Produtos da página de avaliação
-const produtos = [
-  {
-    id: 1,
-    nome: "Macbook Air M3 8GB 256GB - Prateado",
-    marca: "Apple",
-    preco: "R$ 8.999,00",
-    img: "assets/images/macbook-air-m3.jpg",
-  },
-  {
-    id: 2,
-    nome: 'Smartphone Galaxy S24 Ultra, 6.8",  256GB, 12GB RAM - Titânio Preto',
-    marca: "Samsung",
-    preco: "R$ 6.500,00",
-    img: "assets/images/s24-ultra.jpg",
-  },
-  {
-    id: 3,
-    nome: "Smartwatch Galaxy Watch 3 LTE 8GB",
-    marca: "Samsung",
-    preco: "R$ 800,00",
-    img: "assets/images/watch-3-lte.jpg",
-  },
-  {
-    id: 4,
-    nome: "Headset Cloud III 53mm, USB - Preto",
-    marca: "Hyperx",
-    preco: "R$ 549,00",
-    img: "assets/images/hyperx-cloud3.jpg",
-  },
-  {
-    id: 5,
-    nome: "PlayStation 5 Slim 1TB",
-    marca: "Sony",
-    preco: "R$ 3.799,00",
-    img: "assets/images/ps5-slim.jpg",
-  },
-  {
-    id: 6,
-    nome: 'Monitor LG UltraGear 27" 240Hz Full HD 1ms IPS',
-    marca: "LG",
-    preco: "R$ 1.699,99",
-    img: "assets/images/lg-27-ultragear.jpg",
-  },
-  {
-    id: 7,
-    nome: 'Smart TV Crystal 50" 4K UHD',
-    marca: "Samsung",
-    preco: "R$ 2.390,00",
-    img: "assets/images/samsung-tv-50.jpg",
-  },
-  {
-    id: 8,
-    nome: "Roteador TP-Link Archer AX72 AX5400 - WiFi 6, 5378Mbps, Dual Band",
-    marca: "TP-Link",
-    preco: "R$ 709,99",
-    img: "assets/images/tplink-ax5400.jpg",
-  },
-];
+produtos.push(
+  productFactory(
+    1,
+    "Macbook Air M3 8GB 256GB - Prateado",
+    "Apple",
+    "R$ 8.999,00",
+    "assets/images/macbook-air-m3.jpg"
+  ),
+  productFactory(
+    2,
+    'Smartphone Galaxy S24 Ultra, 6.8",  256GB, 12GB RAM - Titânio Preto',
+    "Samsung",
+    "R$ 6.500,00",
+    "assets/images/s24-ultra.jpg"
+  ),
+  productFactory(
+    3,
+    "Smartwatch Galaxy Watch 3 LTE 8GB",
+    "Samsung",
+    "R$ 800,00",
+    "assets/images/watch-3-lte.jpg"
+  ),
+  productFactory(
+    4,
+    "Headset Cloud III 53mm, USB - Preto",
+    "Hyperx",
+    "R$ 549,00",
+    "assets/images/hyperx-cloud3.jpg"
+  ),
+  productFactory(
+    5,
+    "PlayStation 5 Slim 1TB",
+    "Sony",
+    "R$ 3.799,00",
+    "assets/images/ps5-slim.jpg"
+  ),
+  productFactory(
+    6,
+    'Monitor LG UltraGear 27" 240Hz Full HD 1ms IPS',
+    "LG",
+    "R$ 1.699,99",
+    "assets/images/lg-27-ultragear.jpg"
+  ),
+  productFactory(
+    7,
+    'Smart TV Crystal 50" 4K UHD',
+    "Samsung",
+    "R$ 2.390,00",
+    "assets/images/samsung-tv-50.jpg"
+  ),
+  productFactory(
+    8,
+    "Roteador TP-Link Archer AX72 AX5400 - WiFi 6, 5378Mbps, Dual Band",
+    "TP-Link",
+    "R$ 709,99",
+    "assets/images/tplink-ax5400.jpg"
+  )
+);
 
 // Gera o HTML dos produtos
 function gerarProdutos() {
@@ -82,15 +83,15 @@ function gerarProdutos() {
         <span>Marca: ${produto.marca}</span>
         <span>Preço: ${produto.preco}</span>
         <div class="estrelaAvaliacao">
-          <input type="radio" id="estrela5-${produto.id}" name="produto-${produto.id}" />
+          <input type="radio" id="estrela5-${produto.id}" name="produtos" value="5" data-id="${produto.id}" data-marca="${produto.marca}" data-preco="${produto.preco}" data-nome="${produto.nome}" data-img="${produto.img}" />
           <label for="estrela5-${produto.id}">★</label>
-          <input type="radio" id="estrela4-${produto.id}" name="produto-${produto.id}" />
+          <input type="radio" id="estrela4-${produto.id}" name="produtos" value="4" data-id="${produto.id}" data-marca="${produto.marca}" data-preco="${produto.preco}" data-nome="${produto.nome}" data-img="${produto.img}" />
           <label for="estrela4-${produto.id}">★</label>
-          <input type="radio" id="estrela3-${produto.id}" name="produto-${produto.id}" />
+          <input type="radio" id="estrela3-${produto.id}" name="produtos" value="3" data-id="${produto.id}" data-marca="${produto.marca}" data-preco="${produto.preco}" data-nome="${produto.nome}" data-img="${produto.img}" />
           <label for="estrela3-${produto.id}">★</label>
-          <input type="radio" id="estrela2-${produto.id}" name="produto-${produto.id}" />
+          <input type="radio" id="estrela2-${produto.id}" name="produtos" value="2" data-id="${produto.id}" data-marca="${produto.marca}" data-preco="${produto.preco}" data-nome="${produto.nome}" data-img="${produto.img}" />
           <label for="estrela2-${produto.id}">★</label>
-          <input type="radio" id="estrela1-${produto.id}" name="produto-${produto.id}" />
+          <input type="radio" id="estrela1-${produto.id}" name="produtos" value="1" data-id="${produto.id}" data-marca="${produto.marca}" data-preco="${produto.preco}" data-nome="${produto.nome}" data-img="${produto.img}" />
           <label for="estrela1-${produto.id}">★</label>
         </div>
         <div class="comentario roboto-thin" id="div-comentario-${produto.id}" style="display: none;">
@@ -110,4 +111,19 @@ function gerarProdutos() {
   });
 }
 
-gerarProdutos();
+function sendForm() {
+  setTimeout(() => {
+    window.location.assign("//127.0.0.1:5500/form-success.html");
+  }, 500);
+}
+
+const btnSendForm = document.getElementById("sendProductsAvaliationForm");
+btnSendForm.addEventListener("click", sendForm, {
+  once: true,
+  passive: true,
+  capture: false,
+});
+
+addEventListener("DOMContentLoaded", (event) => {
+  gerarProdutos();
+});
